@@ -92,6 +92,7 @@ fun HomeScreen(
                         .padding(top = 12.dp),
                 )
                 AnimatedVisibility(visible = showSearchBar.value) {
+                    val containerColor = colorResource(id = R.color.main_red)
                     TextField(
                         value = inputSearch.value,
                         onValueChange = { inputSearch.value = it },
@@ -118,9 +119,11 @@ fun HomeScreen(
                             )
                         },
                         shape = RoundedCornerShape(22.dp),
-                        colors = TextFieldDefaults.textFieldColors(
+                        colors = TextFieldDefaults.colors(
                             focusedTextColor = Color.White,
-                            containerColor = colorResource(id = R.color.main_red),
+                            focusedContainerColor = containerColor,
+                            unfocusedContainerColor = containerColor,
+                            disabledContainerColor = containerColor,
                             cursorColor = Color.Transparent,
                             focusedIndicatorColor = Color.Transparent,
                             unfocusedIndicatorColor = Color.Transparent,
