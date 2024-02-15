@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Bebidinhas</string>
+    <string name="error_title">Ocorreu algum erro…</string>
+    <string name="error_message">Tente reiniciar o aplicativo</string>
+    <string name="try_again">Tente novamente</string>
+    <string name="loading">Carregando…</string>
+    <string name="ingredients">Ingredientes</string>
+    <string name="kitchenware">Utensílios</string>
+    <string name="prep_mode">Modo de Preparo</string>
 </resources>
