@@ -3,7 +3,7 @@ package com.camilacunha.bebidinhas.data.model
 import com.google.gson.annotations.SerializedName
 
 data class DrinksListResponse(
-    @SerializedName("drinks") val drinkInfoResponses: List<DrinkInfoResponse> = emptyList()
+    @SerializedName("drinks") val drinkInfoResponses: List<DrinkInfoResponse>? = null
 )
 
 data class DrinkInfoResponse(

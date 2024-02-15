@@ -17,7 +17,6 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material.icons.outlined.KeyboardArrowLeft
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
@@ -81,12 +80,6 @@ fun DrinkScreen(
                             .wrapContentSize()
                             .weight(0.5f)
                     )
-                    Icon(
-                        imageVector = Icons.Outlined.FavoriteBorder,
-                        contentDescription = "favorite",
-                        tint = colorResource(id = R.color.main_red),
-                        modifier = Modifier.wrapContentSize()
-                    )
                 }
                 AsyncImage(
                     model = drinkInfoPresentation.strDrinkThumb,
@@ -133,7 +126,7 @@ fun DrinkScreen(
                     }
                 }
                 TextInformationTitle(
-                    text = stringResource(R.string.kitchenware),
+                    text = stringResource(R.string.glass),
                     modifier = Modifier
                         .wrapContentSize()
                         .padding(top = 16.dp, start = 12.dp)
@@ -176,7 +169,7 @@ fun DrinkScreen(
                             text = "${index + 1} - $prep",
                             modifier = Modifier
                                 .wrapContentSize()
-                                .padding(top = 4.dp)
+                                .padding(top = 4.dp, bottom = 18.dp)
                                 .padding(horizontal = 24.dp)
                         )
                     }

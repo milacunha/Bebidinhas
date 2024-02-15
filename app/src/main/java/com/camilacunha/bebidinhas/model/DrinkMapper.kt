@@ -8,7 +8,7 @@ object DrinkMapper {
 
         val drinksMutableList = mutableListOf<DrinkInfoPresentation>()
 
-        drinksListResponse.drinkInfoResponses.forEach {
+        drinksListResponse.drinkInfoResponses?.forEach {
             drinksMutableList.add(turnIntoDrinkInfo(it))
         }
 

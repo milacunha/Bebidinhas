@@ -45,9 +45,13 @@ class MainViewModel : ViewModel() {
         when (drinkResult) {
             is DrinkResult.Loading -> _state.value = DrinkState.Loading
             is DrinkResult.Success -> {
-                val drinksListPresentation = DrinkMapper.turnIntoDrinksList(drinkResult.list)
-                drinksList.value = drinksListPresentation
-                _state.value = DrinkState.ListDrinkSuccess(drinksListPresentation)
+                if (drinkResult.list.drinkInfoResponses == null) {
+                    mapError(null)
+                } else {
+                    val drinksListPresentation = DrinkMapper.turnIntoDrinksList(drinkResult.list)
+                    drinksList.value = drinksListPresentation
+                    _state.value = DrinkState.ListDrinkSuccess(drinksListPresentation)
+                }
             }
 
             is DrinkResult.Failure -> mapError(drinkResult.message)
@@ -72,6 +76,7 @@ class MainViewModel : ViewModel() {
     }
 
     private fun loadDrinksSearch(name: String) {
+        _state.value = DrinkState.Loading
         viewModelScope.launch {
             drinksApiKtor.getDrinksListWithSearch(name)
                 .flowOn(Dispatchers.IO)
@@ -103,6 +108,6 @@ class MainViewModel : ViewModel() {
     }
 
     private fun mapError(message: String?) {
-        _state.value = DrinkState.Error(message = message.orEmpty())
+        _state.value = DrinkState.Error(message = message)
     }
 }

@@ -5,6 +5,7 @@
     <string name="try_again">Tente novamente</string>
     <string name="loading">Carregando…</string>
     <string name="ingredients">Ingredientes</string>
-    <string name="kitchenware">Utensílios</string>
+    <string name="glass">Tipo de Copo</string>
     <string name="prep_mode">Modo de Preparo</string>
+    <string name="empty_list_drinks">Não existe bebida com essa letra.\nQue tal procurar por outra?</string>
 </resources>

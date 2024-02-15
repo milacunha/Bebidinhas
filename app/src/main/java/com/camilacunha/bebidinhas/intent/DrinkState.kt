@@ -7,5 +7,5 @@ sealed class DrinkState {
     object Loading : DrinkState()
     data class ListDrinkSuccess(val drinkList: DrinksListPresentation) : DrinkState()
     data class OneDrinkSuccess(val oneDrink: DrinkInfoPresentation) : DrinkState()
-    data class Error(val message: String) : DrinkState()
+    data class Error(val message: String?) : DrinkState()
 }

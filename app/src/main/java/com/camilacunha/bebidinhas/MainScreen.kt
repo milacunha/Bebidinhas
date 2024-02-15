@@ -29,7 +29,6 @@ const val MAIN_ROUTE: String = "main-route"
 fun MainScreen(
     viewModel: MainViewModel
 ) {
-    val showSearchBar = remember { mutableStateOf(false) }
     val showToastExit = remember { mutableStateOf(false) }
     val activity = (LocalContext.current as Activity)
     val context = LocalContext.current
@@ -48,18 +47,6 @@ fun MainScreen(
 
         is DrinkState.ListDrinkSuccess -> {
             HomeScreen(
-                showSearchBar = showSearchBar,
-                bottomMenu = listOf(
-                    BottomIconsPresentation(icon = Icons.Outlined.Home) {
-                        viewModel.viewModelScope.launch {
-                            viewModel.processIntent(DrinkIntent.HomeDrinks)
-                        }
-                        showSearchBar.value = false
-                    },
-                    BottomIconsPresentation(icon = Icons.Outlined.Search) {
-                        showSearchBar.value = true
-                    },
-                ),
                 onClickSearch = {
                     viewModel.viewModelScope.launch {
                         viewModel.processIntent(DrinkIntent.SearchDrinks(it))
@@ -90,7 +77,7 @@ fun MainScreen(
 
         is DrinkState.Error -> {
             ErrorScreen(
-                errorMessage = state.message,
+                errorMessage = state.message ?: context.getString(R.string.empty_list_drinks),
                 onClickTryAgain = { viewModel.processIntent(DrinkIntent.HomeDrinks) }
             )
         }
