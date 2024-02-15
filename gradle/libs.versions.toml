@@ -1,0 +1,73 @@
+[versions]
+androidx_espresso_core_version = "3.5.1"
+androidx_junit_version = "1.5.4"
+junit_version = "4.13.2"
+ktor_version = "2.3.7"
+coil_version = "2.5.0"
+compose_version = "1.5.4"
+compose_material3_version = "1.1.2"
+androidx_core_version = "1.12.0"
+androidx_lifecycle_version = "2.7.0"
+androidx_activity_version = "1.8.2"
+androidx_navigation_version = "2.7.6"
+androidx_compose_bom = "2023.10.01"
+
+[libraries]
+androidx_compose = {module = "androidx.compose:compose-bom", version.ref = "androidx_compose_bom"}
+androidx_core = {module = "androidx.core:core-ktx", version.ref = "androidx_core_version"}
+androidx_lifecycle = {module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx_lifecycle_version"}
+androidx_activity = {module = "androidx.activity:activity-compose", version.ref = "androidx_activity_version"}
+
+androidx_navigation = {module = "androidx.navigation:navigation-compose", version.ref = "androidx_navigation_version"}
+
+compose_ui_tooling = {module = "androidx.compose.ui:ui-tooling", version.ref = "compose_version"}
+compose_ui_test = {module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose_version"}
+compose_ui = {module = "androidx.compose.ui:ui", version.ref = "compose_version"}
+compose_ui_graphics = {module = "androidx.compose.ui:ui-graphics", version.ref = "compose_version"}
+compose_ui_tooling_preview = {module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose_version"}
+compose_material = {module = "androidx.compose.material3:material3", version.ref = "compose_material3_version"}
+
+coil = {module = "io.coil-kt:coil-compose", version.ref = "coil_version"}
+
+ktor_core = {module = "io.ktor:ktor-client-core", version.ref = "ktor_version"}
+ktor_okhttp = {module = "io.ktor:ktor-client-okhttp", version.ref = "ktor_version"}
+ktor_content_negotiation = {module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor_version"}
+ktor_gson = {module = "io.ktor:ktor-serialization-gson", version.ref = "ktor_version"}
+
+junit = { module = "junit:junit", version.ref = "junit_version" }
+
+androidx_espresso_core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx_espresso_core_version" }
+androidx_junit = { module = "androidx.test.ext:junit", version.ref = "androidx_junit_version" }
+androidx_junit_compose = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "androidx_junit_version" }
+
+[bundles]
+ktor = [
+    "ktor_core",
+    "ktor_okhttp",
+    "ktor_content_negotiation",
+    "ktor_gson"
+]
+
+composeUi = [
+    "compose_ui",
+    "compose_ui_graphics",
+    "compose_ui_tooling_preview",
+    "compose_material"
+]
+
+composeUiTest = [
+    "compose_ui_tooling",
+    "compose_ui_test"
+]
+
+androidx = [
+    "androidx_core",
+    "androidx_lifecycle",
+    "androidx_activity"
+]
+
+androidxTest = [
+    "androidx_espresso_core",
+    "androidx_junit",
+    "androidx_junit_compose"
+]
