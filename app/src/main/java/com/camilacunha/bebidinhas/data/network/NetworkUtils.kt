@@ -9,7 +9,7 @@ import io.ktor.serialization.gson.gson
 object NetworkUtils {
     private const val BASE_PATH: String = "https://www.thecocktaildb.com/api/json/v1/1/"
 
-    private val ktor = HttpClient(OkHttp) {
+    val ktor = HttpClient(OkHttp) {
         defaultRequest {
             url(BASE_PATH)
         }
@@ -17,6 +17,4 @@ object NetworkUtils {
             gson()
         }
     }
-
-    val drinkApiKtor: DrinksApiImpl = DrinksApiImpl(ktor)
 }

@@ -1,20 +1,18 @@
-package com.camilacunha.bebidinhas
+package com.camilacunha.bebidinhas.ui
 
 import android.app.Activity
 import android.widget.Toast
 import androidx.activity.compose.BackHandler
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Home
-import androidx.compose.material.icons.outlined.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewModelScope
+import com.camilacunha.bebidinhas.MainViewModel
+import com.camilacunha.bebidinhas.R
 import com.camilacunha.bebidinhas.intent.BackIntent
 import com.camilacunha.bebidinhas.intent.DrinkIntent
 import com.camilacunha.bebidinhas.intent.DrinkState
-import com.camilacunha.bebidinhas.model.BottomIconsPresentation
 import com.camilacunha.bebidinhas.ui.component.ListDrinksComponent
 import com.camilacunha.bebidinhas.ui.screen.DrinkScreen
 import com.camilacunha.bebidinhas.ui.screen.ErrorScreen

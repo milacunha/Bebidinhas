@@ -5,7 +5,7 @@ import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
 
-class DrinksApiImpl(
+class DrinksApi(
     private val ktor: HttpClient
 ) {
     suspend fun getDrinksListWithSearch(query: String): DrinksListResponse {

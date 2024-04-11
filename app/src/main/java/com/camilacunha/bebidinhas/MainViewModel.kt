@@ -4,8 +4,7 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.camilacunha.bebidinhas.data.network.DrinkHelperImpl
-import com.camilacunha.bebidinhas.data.network.NetworkUtils
+import com.camilacunha.bebidinhas.data.network.DrinkHelper
 import com.camilacunha.bebidinhas.intent.BackIntent
 import com.camilacunha.bebidinhas.intent.DrinkIntent
 import com.camilacunha.bebidinhas.intent.DrinkResult
@@ -17,7 +16,9 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 
-class MainViewModel : ViewModel() {
+class MainViewModel(
+    private val drinksApiKtor: DrinkHelper
+) : ViewModel() {
 
     private val _state = mutableStateOf<DrinkState>(DrinkState.Loading)
     val state: State<DrinkState> = _state
@@ -25,7 +26,6 @@ class MainViewModel : ViewModel() {
     private val _intent = mutableStateOf<BackIntent>(BackIntent.FirstTouch)
     val intent: State<BackIntent> = _intent
 
-    private val drinksApiKtor = DrinkHelperImpl(NetworkUtils.drinkApiKtor)
     private val drinksList = mutableStateOf(DrinksListPresentation())
 
     init {

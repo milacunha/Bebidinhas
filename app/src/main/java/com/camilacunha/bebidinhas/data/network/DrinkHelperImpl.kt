@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 class DrinkHelperImpl(
-    private val drinksApi: DrinksApiImpl
+    private val drinksApi: DrinksApi
 ) : DrinkHelper {
 
     override fun getDrinksList(): Flow<DrinkResult> = flow {
