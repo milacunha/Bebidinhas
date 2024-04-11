@@ -4,6 +4,7 @@ androidx_junit_version = "1.5.4"
 junit_version = "4.13.2"
 ktor_version = "2.3.7"
 coil_version = "2.5.0"
+koin_version = "3.5.0"
 compose_version = "1.5.4"
 compose_material3_version = "1.1.2"
 androidx_core_version = "1.12.0"
@@ -29,6 +30,9 @@ compose_material = {module = "androidx.compose.material3:material3", version.ref
 
 coil = {module = "io.coil-kt:coil-compose", version.ref = "coil_version"}
 
+koin_core = {module = "io.insert-koin:koin-core", version.ref = "koin_version"}
+koin_android = {module = "io.insert-koin:koin-android", version.ref = "koin_version"}
+
 ktor_core = {module = "io.ktor:ktor-client-core", version.ref = "ktor_version"}
 ktor_okhttp = {module = "io.ktor:ktor-client-okhttp", version.ref = "ktor_version"}
 ktor_content_negotiation = {module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor_version"}
@@ -46,6 +50,11 @@ ktor = [
     "ktor_okhttp",
     "ktor_content_negotiation",
     "ktor_gson"
+]
+
+koin = [
+    "koin_core",
+    "koin_android"
 ]
 
 composeUi = [
