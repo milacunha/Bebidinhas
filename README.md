@@ -40,11 +40,13 @@ A construção do aplicativo foi possível com as seguintes ferramentas
 ### Fluxos de Tela
 
 Os fluxos de tela foram desenhados no Figma e replicados no aplicativo com Jetpack Compose.
+
 ![ui-flow-bebidinhas](https://github.com/user-attachments/assets/79003883-ef2b-43d4-9e93-a2b2ba9b35ca)
 
 ### Diagrama
 
 O diagrama de requisitos demonstra o fluxo estrutural do aplicativo.
+
 ![diagram-bebidinhas](https://github.com/user-attachments/assets/0d0a21de-9c08-4246-aa44-fe37592efca5)
 
 ## 📝 Autores
